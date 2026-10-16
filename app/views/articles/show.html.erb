@@ -1,0 +1,17 @@
+<!-- app/views/articles/show.html.erb -->
+<h1 class="main-title">投稿詳細</h1>
+
+<div class="article-detail">
+  <p class="detail-label"><strong>タイトル:</strong></p>
+  <p class="detail-content"><%= @article.title %></p>
+
+  <p class="detail-label"><strong>投稿内容:</strong></p>
+  <p class="detail-content"><%= @article.content %></p>
+</div>
+
+<div class="action-links">
+  <%= link_to '編集', edit_article_path(@article), class: "btn-edit" %>
+  <%= link_to '戻る', articles_path, class: "btn-back" %>
+  <!-- 削除ボタン（button_to） -->
+  <%= button_to '削除', article_path(@article), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "btn-delete" %>
+</div>

@@ -12,4 +12,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+    root 'articles#index'
+  
+  # 7つの基本CRUDルーティングを自動生成
+  resources :articles
 end

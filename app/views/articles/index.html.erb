@@ -1,0 +1,22 @@
+<!-- app/views/articles/index.html.erb -->
+<h1 class="main-title">投稿一覧</h1>
+
+<%= link_to '新規投稿', new_article_path, class: "btn-new" %>
+
+<table class="article-table">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>投稿内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <!-- タイトルクリックで詳細ページへ -->
+        <td><%= link_to article.title, article_path(article), class: "article-link" %></td>
+        <td><%= article.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
